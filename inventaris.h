@@ -7,7 +7,7 @@ typedef struct {
     int Harga;
 } Inventaris;
 
-void CariBarang();
+void CariBarang(Inventaris *inv, char NamaBarang[]);
 void Tampilkan();
 void Update();
 void Tambah();
