@@ -33,7 +33,7 @@ int main () {
 
         switch (pilihan) {
             case 1:
-                printf("Barang apa yang mau kamu cari?");
+                printf("Barang apa yang mau kamu cari? ");
                 scanf("%s", nama);
                 CariBarang(&penyimpanan, nama);
                 break;
@@ -41,11 +41,13 @@ int main () {
                 TampilkanList(penyimpanan);
                 break;
             case 3:
+                Update(&penyimpanan);
                 break;
             case 4:
                 Tambah(&penyimpanan);
                 break;
             case 5:
+                Hapus(&penyimpanan);
                 break;
             case 6:
                 printf("Terimakasih Telah menggunakan program ini, have a good day~\n");

@@ -17,6 +17,6 @@ void CariBarang(Gudang *g, char NamaBarang[]);
 void TampilkanList(Gudang g);
 void Update(Gudang *g);
 void Tambah(Gudang *g);
-void Hapus();
+void Hapus(Gudang *g);
 
 #endif
