@@ -60,16 +60,19 @@ void TampilkanList(Gudang g) {
 
 void Update(Gudang *g) {
     system("cls");
-    int pilih;
+    int pilih, i;
     char nama[20];
+    int nilaiBaru, stokBaru;
     bool ketemu = false;
 
     printf("Masukkan barang yang mau di update");
     scanf("%s", nama);
 
-    for (int i = 0; i < g->jum; i++) {
+    for (i = 0; i < g->jum; i++) {
         if (BandingkanString(g->Daftar[i].Nama, nama) == 0) {
-            printf("\nBarang '%[^\n]' sudah ada di gudang!\n", nama);
+            printf("\nBarang '%[^\n]' ketemu!\n", nama);
+            printf("\nStok: %d | Harga: %d\n", g->Daftar[i].Stok, g->Daftar[i].Harga);
+
 
             ketemu = true;
             break;
@@ -77,19 +80,41 @@ void Update(Gudang *g) {
     }
     
     if (!ketemu) {
-        printf("\nmau update apa?");
-        printf("1. Stok barang");
-        printf("2. Harga barang");
-        scanf("%d", &pilih);
-        
-        
-
-        if (pilih == 1) {
-            
-        }
+        printf("Maaf barang yang tidak ada di gudang tidak dapat diperbarui")
     }
 
+    else {
+        printf("\nMau update apa?");
+        printf("1. Stok barang");
+        printf("2. Harga barang");
+        printf("3. Batal");
+        scanf("%d", &pilih);
+        
+        if (pilih == 1) {
+            printf("Masukkan jumlah stok baru: ");
+            scanf("%d", &nilaiBaru);
+            
+            g->Daftar[i].Stok = nilaiBaru; 
+            printf("\nStok berhasil diubah menjadi %d.\n", nilaiBaru);
+        } 
+        else if (pilih == 2) {
+            printf("Masukkan harga baru: ");
+            scanf("%d", &nilaiBaru);
+            
+            g->Daftar[i].Harga = nilaiBaru;
+            printf("\nHarga berhasil diubah menjadi %d.\n", nilaiBaru);
+        } 
+        else if (pilih == 3) {
+            printf("Update dibatalkan.\n");
+        }
+        else {
+            printf("Pilihan tidak valid.\n");
+        }
+            
+    }
 }
+
+
 
 void Tambah(Gudang *g) {
     Barang *b = &g->Daftar[g->jum];
