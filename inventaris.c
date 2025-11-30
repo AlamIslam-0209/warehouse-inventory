@@ -80,7 +80,7 @@ void Update(Gudang *g) {
     }
     
     if (!ketemu) {
-        printf("Maaf barang yang tidak ada di gudang tidak dapat diperbarui")
+        printf("Maaf barang yang tidak ada di gudang tidak dapat diperbarui");
     }
 
     else {
