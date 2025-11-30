@@ -5,12 +5,18 @@ typedef struct {
     char Nama[20];
     int Stok;
     int Harga;
-} Inventaris;
+} Barang;
 
-void CariBarang(Inventaris *inv, char NamaBarang[]);
-void Tampilkan();
-void Update();
-void Tambah();
+typedef struct {
+    Barang Daftar[100];
+    int jum;
+} Gudang;
+
+void InisialisasiGudang(Gudang *g);
+void CariBarang(Gudang *g, char NamaBarang[]);
+void TampilkanList(Gudang g);
+void Update(Gudang *g);
+void Tambah(Gudang *g);
 void Hapus();
 
 #endif
