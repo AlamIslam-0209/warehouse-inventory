@@ -72,8 +72,8 @@ int main () {
 
         if (pilihan != 6) { //pause sementara
         printf("\n\nTekan Enter Untuk Kembali...");
-        getchar();
-        getchar(); //katanya cari aman buat dua, mana tau beda compiler beda output
+        getchar(); //membersikan buffer
+        getchar(); //menunggu input enter
     }
 
 
