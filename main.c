@@ -6,19 +6,22 @@
 
 
 int main () {
-
-    bool StatusMenu = true;
-    int pilihan;
-    Gudang penyimpanan;
+    
+    aktifkanModeVirtualTerminal(); // Mengaktifkan mode virtual terminal
+    bool StatusMenu = true; // Status  awal untuk menjalankan menu utama
+    int pilihan; 
+    Gudang penyimpanan; // Deklarasi variabel gudang
     char nama[20];
     int harga, stok;
     
-    InisialisasiGudang(&penyimpanan);
+    InisialisasiGudang(&penyimpanan); // Inisialisasi gudang sebelum digunakan
 
+    // Main Loop Menu
     while (StatusMenu) {
 
-        system("cls");
+        clearScreen(); // Membersihkan layar sebelum menampilkan menu utama
 
+        // Tampilan menu utama
         printf("Hai, aku asisten pintar Gudang mu!\n");
         printf("mau apa?\n");
         printf("1. Cari Barang\n");
@@ -31,35 +34,43 @@ int main () {
         printf("pilihan : ");
         scanf("%d", &pilihan);
 
+        //logika pemilihan menu dengan switch case
         switch (pilihan) {
-            case 1:
+
+            case 1: // jika pengguna memilih cari Barang
                 printf("Barang apa yang mau kamu cari? ");
                 scanf("%s", nama);
                 CariBarang(&penyimpanan, nama);
                 break;
-            case 2:
+
+            case 2: // jika pengguna memilih tampilkan barang
                 TampilkanList(penyimpanan);
                 break;
-            case 3:
+
+            case 3: // jika pengguna memilih update barang
                 Update(&penyimpanan);
                 break;
-            case 4:
+
+            case 4: // jika pengguna memilih tambah barang
                 Tambah(&penyimpanan);
                 break;
-            case 5:
+
+            case 5: // jika pengguna memilih hapus barang
                 Hapus(&penyimpanan);
                 break;
-            case 6:
+
+            case 6: // jika pengguna memilih keluar dari program
                 printf("Terimakasih Telah menggunakan program ini, have a good day~\n");
-                StatusMenu = false;
+                StatusMenu = false; // Mengubah status menu menjadi false untuk keluar dari loop
                 break;
-            default :
+
+            default : // jika pengguna memasukkan perintah yang tidak valid
                 printf("Perintah yang anda masukkan tidak valid, silahlah kembali terlebih dahulu~\n");
                 break;
 
         }
 
-        if (pilihan != 6) {
+        if (pilihan != 6) { //pause sementara
         printf("\n\nTekan Enter Untuk Kembali...");
         getchar();
         getchar(); //katanya cari aman buat dua, mana tau beda compiler beda output
