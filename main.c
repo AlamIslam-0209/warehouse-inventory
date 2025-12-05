@@ -19,7 +19,7 @@ int main () {
     // Main Loop Menu
     while (StatusMenu) {
 
-        clearScreen(); // Membersihkan layar sebelum menampilkan menu utama
+        system("cls"); // Membersihkan layar sebelum menampilkan menu utama
 
         // Tampilan menu utama
         printf("Hai, aku asisten pintar Gudang mu!\n");

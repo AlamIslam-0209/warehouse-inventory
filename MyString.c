@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "string.h"
+#include "mystring.h"
 
 // Fungsi untuk membandingkan dua string
 int BandingkanString(char str1[], char str2[]) {

@@ -1,6 +1,6 @@
 #include "inventaris.h" 
 #include "style.h" // Untuk fungsi clearScreen dan moveCursor
-#include "string.h" // Untuk fungsi BandingkanString dan SalinString    
+#include "mystring.h" // Untuk fungsi BandingkanString dan SalinString    
 #include <stdio.h> 
 #include <stdbool.h> // Untuk tipe data boolean
 #include <stdlib.h> 
@@ -35,23 +35,22 @@ void TampilkanList(Gudang g) {
     clearScreen(); // Membersihkan layar sebelum menampilkan daftar
 
     printf("========== Daftar Inventaris Gudang =========\n");
-    printf("=============================================");
     // Header tabel
-    moveCursor(3, 0);  printf("No");
-    moveCursor(3, 6);  printf("Nama");
-    moveCursor(3, 30); printf("stok");
-    moveCursor(3, 40); printf("Harga");
-    moveCursor(4, 0); 
+    moveCursor(2, 0);  printf("No");
+    moveCursor(2, 6);  printf("Nama");
+    moveCursor(2, 30); printf("stok");
+    moveCursor(2, 40); printf("Harga");
+    moveCursor(3, 0); 
     
     if (g.jum == 0) { // Kondisi jika tidak ada barang di gudang
-        moveCursor(5, 0);
+        moveCursor(4, 0);
         printf("           ------Data Kosong------");
     }
     
     else {  // Menampilkan daftar barang jika ada
         printf("---------------------------------------------");
         for (int i = 0; i < g.jum; i++) {
-            int baris = i+5;
+            int baris = i+4;
             moveCursor(baris, 0);
             printf("%d.", i+1);
             moveCursor(baris, 6);
